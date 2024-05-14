@@ -169,10 +169,10 @@ class OrderShipmentRecord extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\US\Orders\RefundLinesType
+     * @return OrderLinesType
     
      */
-    public function getOrderLines()
+    public function getOrderLines(): OrderLinesType
     {
         return $this->container['orderLines'];
     }
@@ -180,17 +180,13 @@ class OrderShipmentRecord extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\US\Orders\RefundLinesType $orderLines orderLines
+     * @param OrderLinesType $orderLines orderLines
      *
      * @return self
     
      */
-    public function setOrderLines($orderLines)
+    public function setOrderLines(OrderLinesType $orderLines): self
     {
-        if (is_null($orderLines)) {
-            throw new \InvalidArgumentException('non-nullable orderLines cannot be null');
-        }
-
         $this->container['orderLines'] = $orderLines;
         return $this;
     }
